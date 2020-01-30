@@ -6,26 +6,26 @@ class BakesController < ApplicationController
       end 
 
     def show
-        Bake = Bake.find_by(id: params[:id])
-        render json: Bake
+        bake = Bake.find_by(id: params[:id])
+        render json: bake
     end 
     
-      def create
-        Bake = Bake.create(Bake_params)
-        render json: Bake
-      end
-    
-      def update
-        Bake = Bake.find_by(params[:id])
-        render json: Bake
-      end 
-    
-      def destroy
+    def create
+        bake = Bake.create(bake_params)
+        render json: bake
+    end
+
+    def update
+        bake = Bake.find_by(params[:id])
+        render json: bake
+    end 
+
+    def destroy
         data = {message: "Bake has been deleted"}
-        Bake = Bake.find(params[:id])
-        Bake.delete()
+        bake = Bake.find(params[:id])
+        bake.delete()
         render json: data 
-      end 
+    end 
 
     private
 
