@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bake_id: 1
+  title: MyString
+  content: MyString
+
+two:
+  bake_id: 1
+  title: MyString
+  content: MyString
