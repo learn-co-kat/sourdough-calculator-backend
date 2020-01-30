@@ -1,6 +1,31 @@
 class BakesController < ApplicationController
-    belongs_to: user
-    has_many: notes
+
+    def index
+        bakes = Bake.all
+        render json: bakes
+      end 
+
+    def show
+        Bake = Bake.find_by(id: params[:id])
+        render json: Bake
+    end 
+    
+      def create
+        Bake = Bake.create(Bake_params)
+        render json: Bake
+      end
+    
+      def update
+        Bake = Bake.find_by(params[:id])
+        render json: Bake
+      end 
+    
+      def destroy
+        data = {message: "Bake has been deleted"}
+        Bake = Bake.find(params[:id])
+        Bake.delete()
+        render json: data 
+      end 
 
     private
 

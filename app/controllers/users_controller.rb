@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    has_many: bakes
 
     def create
         user = User.find_by(email: params[:email])
@@ -9,6 +8,16 @@ class UsersController < ApplicationController
         render json: user
     end 
 
+    def show
+        user = User.find_by(id: params[:id])
+        render json: user
+    end 
+
+    def index
+        users = User.all
+        render json: users 
+    end 
+
     def update
         user = User.find_by(id: params[:id])
         user.update(user_params)
@@ -16,9 +25,10 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        user = User.find_by(id: params[:id])
-        user.destroy 
-        render json: user
+        data = {message: "User has been deleted"}
+        user = User.find(params[:id])
+        user.delete()
+        render json: data 
     end
 
     private
