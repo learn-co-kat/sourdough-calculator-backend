@@ -16,14 +16,10 @@ class NotesController < ApplicationController
       end
     
       def update
-        note = Note.find_by(params[:id])
+        note = Note.find_by(id: params[:id])
         note.update(note_params)
         render json: note
       end 
-
-      # skill = Skill.find_by(id: params[:id])
-      # skill.update(skill_params)
-      # render json: skill
     
       def destroy
         data = {message: "Note has been deleted"}

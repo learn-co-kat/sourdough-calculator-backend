@@ -16,7 +16,8 @@ class BakesController < ApplicationController
     end
 
     def update
-        bake = Bake.find_by(params[:id])
+        bake = Bake.find_by(id: params[:id])
+        bake.update(bake_params)
         render json: bake
     end 
 
