@@ -18,7 +18,7 @@ class BakesController < ApplicationController
     def update
         bake = Bake.find_by(id: params[:id])
         bake.update(bake_params)
-        @bake.photos.attach(params[:photos])
+        bake.photos.attach(params[:photos])
         render json: bake
     end 
 
