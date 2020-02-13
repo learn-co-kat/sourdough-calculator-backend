@@ -41,4 +41,9 @@ $ npm install
 $ npm start
 ```
 
+## Demo ## 
+
+![Demo part 1](https://github.com/learn-co-kat/sourdough-calculator-frontend/blob/master/src/images/sourdough-app-part1.gif)
+
+![Demo part 2](https://github.com/learn-co-kat/sourdough-calculator-frontend/blob/master/src/images/sourdough-app-part2.gif)
 
